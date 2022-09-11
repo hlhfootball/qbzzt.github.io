@@ -24,8 +24,9 @@ task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
 
 module.exports = {
   solidity: "0.8.4",
-/*
+
   networks: {
+/*
     "local-devnode": {
        url: "http://localhost:8545",
        accounts: { mnemonic: "test test test test test test test test test test test junk" }
@@ -37,7 +38,12 @@ module.exports = {
     "optimism": {
        url: "https://mainnet.optimism.io",
        accounts: { mnemonic: process.env.MNEMONIC }
+    },
+*/
+    "goerli": {
+      url: process.env.REACT_APP_ALCHEMY_API_URL,
+      accounts: [process.env.REACT_APP_PRIVATE_KEY]
     }
   }
-*/
+
 };
